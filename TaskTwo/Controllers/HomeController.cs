@@ -19,5 +19,17 @@ namespace TaskTwo.Controllers
 
             return View();
         }
+        public IActionResult EbayTrans()
+        {
+
+
+            return View();
+        }
+        public IActionResult EbayIndex()
+        {
+
+
+            return View();
+        }
     }
 }
