@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TaskTwo.Models
 {
-    public class TransactionPage
+    public class AmazonTransaction
     {
         [Key]
         public int TransactionID { get; set; }
@@ -19,6 +19,6 @@ namespace TaskTwo.Models
         public DateTime LastUpdateDate { get; set; }
 
         public int? MasterPageID { get; set; }
-        public virtual MasterPage MasterPage { get; set; }
+        public virtual AmazonMaster MasterPage { get; set; }
     }
 }

@@ -1,27 +1,29 @@
-﻿using System.Linq;
-
-using Microsoft.AspNetCore.Mvc;
+﻿using System;
 using System.Collections;
-using TaskTwo.Models;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using TaskTwo.Data;
 
 namespace TaskTwo.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MasterPageController : ControllerBase
+    public class EbayController : ControllerBase
     {
         private Context context = new Context();
         [HttpGet("GetAll")]
         public IEnumerable GetAll()
         {
-            return (context.masterPages.ToList());
+            return (context.ebayMasters.ToList());
         }
         [HttpGet("GetAllTrans")]
         public IEnumerable GetAllTrans()
         {
-            var s = context.transactionPages.ToList();
-            return (context.transactionPages.ToList());
+
+            return (context.ebayTransactions.ToList());
         }
     }
 }
