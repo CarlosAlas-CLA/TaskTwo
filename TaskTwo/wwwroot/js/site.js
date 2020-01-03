@@ -10,7 +10,7 @@ function getAmazonFood() {
             success: function (data) {
                 var row = '';
                 $.each(data, function (index, obj) {
-                    row += '<tr><td > ' + obj.masterPageID + ' </td> <td > '
+                    row += '<tr><td hidden=hidden> ' + obj.masterPageID + ' </td> <td > '
                         + obj.lastDayQtySold + ' </td> <td >'
                         + obj.lastDayProfit + '</td> <td >'
                         + obj.totalProducts + '</td><td >' + '</td></tr>';
@@ -31,7 +31,7 @@ function getAmazonTrans() {
             success: function (data) {
                 var row = '';
                 $.each(data, function (index, obj) {
-                    row += '<tr><td  class=id> '
+                    row += '<tr><td > '
                         + obj.productName + ' </td> <td> '
                         + obj.asin + ' </td> <td>'
                         + obj.price + '</td> <td >'
