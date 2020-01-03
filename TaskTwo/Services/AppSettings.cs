@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System.IO;
 
-namespace TaskTwo
+namespace TaskTwo.Services
 {
     public class AppSettigns
     {
