@@ -13,6 +13,6 @@ namespace TaskTwo.Models
         public int LastDayQtySold { get; set; }
         public int LastDayProfit { get; set; }
         public int TotalProducts { get; set; }
-        public virtual ICollection<EbayMaster> TransactionPages { get; set; }
+        //public virtual ICollection<EbayTransactions> TransactionPages { get; set; }
     }
 }

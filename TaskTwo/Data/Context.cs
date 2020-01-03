@@ -33,38 +33,38 @@ namespace TaskTwo.Data
             //One
             base.OnModelCreating(builder);
             builder.Entity<AmazonMaster>().HasData(
-     new AmazonMaster() { MasterPageID = 1, LastDayProfit = 100, LastDayQtySold = 110000 });
+     new AmazonMaster() { MasterPageID = 1, LastDayProfit = 100, LastDayQtySold = 110000, TotalProducts = 14 });
 
             builder.Entity<AmazonTransaction>().HasData(
 new AmazonTransaction() { TransactionID = 1, MasterPageID = 1, Asin = 0010102, Price = 10000, LastUpdateDate = myDate, ProductName = "Pizza", LastDayQtySold = 100, LastDayProfit = 110000 });
             //Two
             builder.Entity<AmazonMaster>().HasData(
-     new AmazonMaster() { MasterPageID = 2, LastDayProfit = 200, LastDayQtySold = 220000 });
+     new AmazonMaster() { MasterPageID = 2, LastDayProfit = 200, LastDayQtySold = 220000, TotalProducts = 55 });
 
             builder.Entity<AmazonTransaction>().HasData(
 new AmazonTransaction() { TransactionID = 2, MasterPageID = 2, Asin = 200001, Price = 100, LastUpdateDate = myDate2, ProductName = "Sauce", LastDayQtySold = 200, LastDayProfit = 220000 });
             //Three
             builder.Entity<AmazonMaster>().HasData(
-     new AmazonMaster() { MasterPageID = 3, LastDayProfit = 3000, LastDayQtySold = 50 });
+     new AmazonMaster() { MasterPageID = 3, LastDayProfit = 3000, LastDayQtySold = 50, TotalProducts = 33 });
 
             builder.Entity<AmazonTransaction>().HasData(
 new AmazonTransaction() { TransactionID = 3, MasterPageID = 3, Asin = 010102, Price = 1000, LastUpdateDate = myDate3, ProductName = "Tamales", LastDayQtySold = 50, LastDayProfit = 30000 });
             //One
             base.OnModelCreating(builder);
             builder.Entity<EbayMaster>().HasData(
-     new EbayMaster() { MasterPageID = 1, LastDayProfit = 100, LastDayQtySold = 110000 });
+     new EbayMaster() { MasterPageID = 1, LastDayProfit = 100, LastDayQtySold = 110000, TotalProducts = 244 });
 
             builder.Entity<EbayTransactions>().HasData(
 new EbayTransactions() { TransactionID = 1, MasterPageID = 1, Asin = 770010102, Price = 10, LastUpdateDate = myDate, ProductName = "Pasta", LastDayQtySold = 100, LastDayProfit = 110000 });
             //Two
             builder.Entity<EbayMaster>().HasData(
-     new EbayMaster() { MasterPageID = 2, LastDayProfit = 200, LastDayQtySold = 220000 });
+     new EbayMaster() { MasterPageID = 2, LastDayProfit = 200, LastDayQtySold = 220000, TotalProducts = 2 });
 
             builder.Entity<EbayTransactions>().HasData(
 new EbayTransactions() { TransactionID = 2, MasterPageID = 2, Asin = 66200001, Price = 1, LastUpdateDate = myDate2, ProductName = "Bread", LastDayQtySold = 200, LastDayProfit = 220000 });
             //Three
             builder.Entity<EbayMaster>().HasData(
-     new EbayMaster() { MasterPageID = 3, LastDayProfit = 3000, LastDayQtySold = 50 });
+     new EbayMaster() { MasterPageID = 3, LastDayProfit = 3000, LastDayQtySold = 50, TotalProducts = 233 });
 
             builder.Entity<EbayTransactions>().HasData(
 new EbayTransactions() { TransactionID = 3, MasterPageID = 3, Asin = 555010102, Price = 1000, LastUpdateDate = myDate3, ProductName = "Tomato", LastDayQtySold = 50, LastDayProfit = 30000 });

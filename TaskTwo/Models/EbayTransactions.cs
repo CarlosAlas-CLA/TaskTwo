@@ -18,6 +18,6 @@ namespace TaskTwo.Models
         public DateTime LastUpdateDate { get; set; }
 
         public int? MasterPageID { get; set; }
-        public virtual EbayMaster EbayMaster { get; set; }
+        //public virtual EbayMaster EbayMaster { get; set; }
     }
 }

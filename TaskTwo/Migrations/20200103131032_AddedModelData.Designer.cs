@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TaskTwo.Data;
 
 namespace TaskTwo.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20200103131032_AddedModelData")]
+    partial class AddedModelData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -93,6 +95,8 @@ namespace TaskTwo.Migrations
 
                     b.HasKey("TransactionID");
 
+                    b.HasIndex("MasterPageID");
+
                     b.ToTable("transactionPages");
 
                     b.HasData(
@@ -138,6 +142,9 @@ namespace TaskTwo.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("EbayMasterMasterPageID")
+                        .HasColumnType("int");
+
                     b.Property<int>("LastDayProfit")
                         .HasColumnType("int");
 
@@ -148,6 +155,8 @@ namespace TaskTwo.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("MasterPageID");
+
+                    b.HasIndex("EbayMasterMasterPageID");
 
                     b.ToTable("ebayMasters");
 
@@ -185,6 +194,9 @@ namespace TaskTwo.Migrations
                     b.Property<int>("Asin")
                         .HasColumnType("int");
 
+                    b.Property<int?>("EbayMasterMasterPageID")
+                        .HasColumnType("int");
+
                     b.Property<int>("LastDayProfit")
                         .HasColumnType("int");
 
@@ -204,6 +216,8 @@ namespace TaskTwo.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("TransactionID");
+
+                    b.HasIndex("EbayMasterMasterPageID");
 
                     b.ToTable("ebayTransactions");
 
@@ -241,6 +255,27 @@ namespace TaskTwo.Migrations
                             Price = 1000,
                             ProductName = "Tomato"
                         });
+                });
+
+            modelBuilder.Entity("TaskTwo.Models.AmazonTransaction", b =>
+                {
+                    b.HasOne("TaskTwo.Models.AmazonMaster", "MasterPage")
+                        .WithMany("TransactionPages")
+                        .HasForeignKey("MasterPageID");
+                });
+
+            modelBuilder.Entity("TaskTwo.Models.EbayMaster", b =>
+                {
+                    b.HasOne("TaskTwo.Models.EbayMaster", null)
+                        .WithMany("TransactionPages")
+                        .HasForeignKey("EbayMasterMasterPageID");
+                });
+
+            modelBuilder.Entity("TaskTwo.Models.EbayTransactions", b =>
+                {
+                    b.HasOne("TaskTwo.Models.EbayMaster", "EbayMaster")
+                        .WithMany()
+                        .HasForeignKey("EbayMasterMasterPageID");
                 });
 #pragma warning restore 612, 618
         }

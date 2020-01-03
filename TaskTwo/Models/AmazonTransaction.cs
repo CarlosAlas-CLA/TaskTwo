@@ -19,6 +19,6 @@ namespace TaskTwo.Models
         public DateTime LastUpdateDate { get; set; }
 
         public int? MasterPageID { get; set; }
-        public virtual AmazonMaster MasterPage { get; set; }
+        //public virtual AmazonMaster MasterPage { get; set; }
     }
 }

@@ -90,3 +90,25 @@ function getEbayTrans() {
         });
     });
 }
+//Filter
+
+
+
+function x(e) {
+    var search = document.forms["myForm"]["fn"].value;
+    var data = {
+        ID: search
+    };
+    $.ajax({
+        url: '/api/Amazon/Find',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        method: 'Post',
+        dataType: 'json',
+        data: JSON.stringify(data),
+        success: function (data) {
+            console.log('succes: ' + data);
+        }
+    });
+}
